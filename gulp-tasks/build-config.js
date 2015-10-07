@@ -64,6 +64,10 @@ let setting = {
 			includeContent: true,
 			debug: true
 		}
+	},
+	bundleOptions: {
+		minify: false, 
+		sourceMaps: 'inline'
 	}
 };
 

@@ -1,8 +1,15 @@
 import angular from 'angular';
 
-let moduleName = "jspm-systemjs-angular";
+import uiRouter from 'angular-ui-router';
 
-let appModule = angular.module(moduleName, [])
+import repModule from './representative/module';
+
+let moduleName = "jsa";
+
+let appModule = angular.module(moduleName, [
+	
+	'ui.router',
+	repModule.name])
 	
 	.config(config);
 	

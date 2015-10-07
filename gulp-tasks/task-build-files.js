@@ -1,3 +1,5 @@
+'use strict';
+
 let gulp			= require('gulp'),
 	$				= require('gulp-load-plugins')({ lazy: true }),
 	
@@ -12,4 +14,17 @@ gulp.task('build-files', ['build-files:index', 'build-files:systemjs'], function
 
 gulp.task('build-files:index', [], function () {
 	log(`Copying ${config.file.index} to ${config.dir.public}`);
+	
+	return gulp.src(config.dir.src + config.file.index)
+	
+	.pipe($.plumber({ handleError: errorHandler }))
+	.pipe(gulp.dest(config.dir.public));
+});
+
+gulp.task('build-files:systemjs', [], function () {
+	
+	return gulp.src(config.dir.jspm_packages + config.file.systemJs.systemJs)
+	
+	.pipe($.plumber({ handleError: errorHandler }))
+	.pipe(gulp.dest(config.dir.public));
 });

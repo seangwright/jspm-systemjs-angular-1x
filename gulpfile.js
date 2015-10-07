@@ -1,1 +1,1 @@
-require('require-dir')('./gulp-tasks');
+require('require-dir', { recurse: true })('./gulp-tasks');

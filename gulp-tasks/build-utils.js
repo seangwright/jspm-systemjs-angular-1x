@@ -1,12 +1,17 @@
+'use strict';
+
 let del		= require('del'),
 	$		= require('gulp-load-plugins')({ lazy: true }),
+	
 	config	= require('./build-config');
 	
 module.exports = {
 	log: 			log,
 	clean: 			clean,
 	errorHandler:	errorHandler,
-	buildDev:		buildDev
+	buildDev:		buildDev,
+	bundleVendor:	bundleVendor,
+	bundleTemplates:bundleTemplates
 };
 
 function log(msg, error) {
@@ -33,9 +38,16 @@ function errorHandler(error) {
 	log(error, true);
 	
 	this.emit('end');
-	
 }
 
 function buildDev() {
-	
+	return config.build.environment == config.build.envs.dev;
+}
+
+function bundleVendor() {
+	return config.build.vendor;
+}
+
+function bundleTemplates() {
+	return config.build.templates;
 }

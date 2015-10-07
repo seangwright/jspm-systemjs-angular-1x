@@ -18,9 +18,14 @@ gulp.task('build-scripts', [], function () {
 gulp.task('build-scripts', [], function () {
 	let builder = new Builder('/', './config.js');
 	
-	return builder.bundle('[app/**/*]', 'public/app.js', config.bundleOptions)
+	return builder.bundle(
+		config.app.module.app, 
+		config.dir.public + config.file.bundle.app, 
+		config.bundleOptions)
+		
 		.then(function () {
 		})
+		
 		.catch(function (err) {
 			log(`Error : ${err}`);
 		});

@@ -7,6 +7,7 @@ let appModule = angular.module(moduleName, [])
 	.config(config);
 	
 function config($locationProvider) {
+	"ngInject";
 	$locationProvider.html5Mode(true).hashPrefix('!');
 }
 

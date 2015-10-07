@@ -1,4 +1,5 @@
 function RepIndexController(repManager) {
+	"ngInject";
 	let vm = this;
 }
 

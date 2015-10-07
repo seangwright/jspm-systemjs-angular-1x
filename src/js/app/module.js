@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import uiRouter from 'angular-ui-router';
 
+import commonModule from './common/module';
 import repModule from './representative/module';
 
 let moduleName = "jsa";
@@ -9,6 +10,8 @@ let moduleName = "jsa";
 let appModule = angular.module(moduleName, [
 	
 	'ui.router',
+	
+	commonModule,
 	repModule.name])
 	
 	.config(config);

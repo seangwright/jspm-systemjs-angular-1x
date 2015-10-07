@@ -5,9 +5,9 @@ let path		= require('path'),
 	
 let app = {
 	module: {
-		app: '[app/**/*]',
-		template: 'app:templates',
-		vendor: 'app/module.js - [app/**/*]'
+		app: '[app/**/*.js]',
+		template: 'public/templates - angular',
+		vendor: 'app/module - [app/**/*.js] - public/templates + angular'
 	}
 };
 

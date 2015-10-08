@@ -7,5 +7,6 @@ gulp.task('build', function(done) {
 	runSequence(
 		'build-clean',
 		['build-scripts', 'build-files'],
+		'watch',
 		done);
 });

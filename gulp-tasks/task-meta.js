@@ -1,5 +1,6 @@
+'use strict';
 
-var gulp 			= require('gulp'),
+let gulp 			= require('gulp'),
 	args 			= require('yargs').argv,
 	$ 				= require('gulp-load-plugins')({ lazy: true }),
 
@@ -12,10 +13,10 @@ var gulp 			= require('gulp'),
 ///	see https://www.npmjs.com/package/gulp-bump
 ///
 gulp.task('bump', function () {
-	var msg = 'Bumping versions';
-	var type = args.type;
-	var version = args.ver;
-	var options = {};
+	let msg = 'Bumping versions';
+	let type = args.type;
+	let version = args.ver;
+	let options = {};
 
 	if (version) {
 		options.version = version;

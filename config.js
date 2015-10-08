@@ -17,6 +17,7 @@ System.config({
 
   map: {
     "jsa:repService": "app/representative/service/module",
+    "jsa:templates": "public/templates",
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.25",

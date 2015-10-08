@@ -5,6 +5,8 @@ import uiRouter from 'angular-ui-router';
 import commonModule from './common/module';
 import repModule from './representative/module';
 
+import templatesModule from "jsa:templates";
+
 let moduleName = "jsa";
 
 let appModule = angular.module(moduleName, [
@@ -12,7 +14,8 @@ let appModule = angular.module(moduleName, [
 	'ui.router',
 	
 	commonModule.name,
-	repModule.name])
+	repModule.name,
+	'jsa.templates'])
 	
 	.config(config);
 	

@@ -9,8 +9,20 @@ let gulp 			= require('gulp'),
 	errorHandler	= require('./build-utils').errorHandler,
 	config			= require('./build-config');
 	
-gulp.task('build-scripts', ['build-scripts:ng-annotate', 'build-scripts:bundle-template', 'build-scripts:bundle-vendor'], function () {
+gulp.task('build-scripts', ['build-scripts:app', 'build-scripts:vendor'], function () {
 	log('Building scripts ...');
+});
+
+gulp.task('build-scripts:app', ['build-scripts:ng-annotate'], function (done) {
+	return done();
+});
+
+gulp.task('build-scripts:vendor', ['build-scripts:bundle-vendor'], function (done) {
+	return done();
+});
+
+gulp.task('build-scripts:templates', ['build-scripts:bundle-template'], function (done) {
+	return done();
 });
 
 gulp.task('build-scripts:ng-annotate', ['build-scripts:bundle-app'], function () {
@@ -45,7 +57,7 @@ gulp.task('build-scripts:bundle-app', [], function () {
 		});
 });
 
-gulp.task('build-scripts:bundle-vendor', [], function () {
+gulp.task('build-scripts:bundle-vendor', ['build-scripts:templates'], function () {
 	if (utils.bundleVendor()) {
 		log(`Starting bundling of ${config.file.bundle.vendor} in ${config.dir.public}`);
 		let builder = new Builder('/', './config.js');

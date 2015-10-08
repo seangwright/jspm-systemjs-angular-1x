@@ -11,7 +11,7 @@ let appModule = angular.module(moduleName, [
 	
 	'ui.router',
 	
-	commonModule,
+	commonModule.name,
 	repModule.name])
 	
 	.config(config);

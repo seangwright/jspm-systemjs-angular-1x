@@ -2,7 +2,8 @@ import angular from 'angular';
 
 import repServiceModule from 'jsa:repService';
 
-import RepIndexController from './repIndex';
+import RepDetailController from './detail/controller';
+import RepIndexController from './index/controller';
 
 let moduleName = 'jsa.representative.controller';
 
@@ -21,26 +22,22 @@ function config($stateProvider, $urlRouterProvider) {
 
 	// Now set up the states
 	$stateProvider
-		.state('state1', {
-			url: "/state1",
-			templateUrl: "partials/state1.html"
+		.state('repIndex', {
+			url: "/representatives",
+			templateUrl: "representatives/controller/index/template.html",
+			controller: RepIndexController.name,
+			controllerAs: 'vm'
 		})
-		.state('state1.list', {
-			url: "/list",
-			templateUrl: "partials/state1.list.html",
-			controller: function ($scope) {
-				$scope.items = ["A", "List", "Of", "Items"];
-			}
+		.state('repIndex.detail', {
+			url: "/representatives/detail/",
+			templateUrl: "representatives/controller/index/template.detail.html",
+			controller: RepIndexController.name,
+			controllerAs: 'vm'
 		})
-		.state('state2', {
-			url: "/state2",
-			templateUrl: "partials/state2.html"
-		})
-		.state('state2.list', {
-			url: "/list",
-			templateUrl: "partials/state2.list.html",
-			controller: function ($scope) {
-				$scope.things = ["A", "Set", "Of", "Things"];
-			}
+		.state('repDetail', {
+			url: "/representatives/{id}/detail",
+			templateUrl: "/representatives/controller/detail/template.html",
+			controller: RepDetailController.name,
+			controllerAs: 'vm'
 		});
 }

@@ -6,8 +6,8 @@ let path		= require('path'),
 let app = {
 	module: {
 		app: '[app/**/*.js]',
-		template: 'public/templates - angular',
-		vendor: 'app/module - [app/**/*.js] - public/templates + angular'
+		template: 'jsa:templates - angular',
+		vendor: 'app/module - [app/**/*.js] - jsa:templates + angular'
 	}
 };
 
@@ -30,7 +30,7 @@ let dir = {
 
 let file = {
 	bundle: {
-		app: 'app.js',
+		app: 'jsa.js',
 		vendor: 'vendor.js',
 		template: 'templates.js',
 	},
@@ -43,7 +43,7 @@ let file = {
 
 let setting = {
 	templateCache: {
-		module: 'app.templates',
+		module: 'jsa.templates',
 		moduleSystem: 'RequireJS',
 		standalone: true
 	},

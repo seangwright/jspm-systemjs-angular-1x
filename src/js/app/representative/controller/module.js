@@ -24,19 +24,19 @@ function config($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('repIndex', {
 			url: "/representatives",
-			templateUrl: "representatives/controller/index/template.html",
+			templateUrl: "representative/controller/index/template.html",
 			controller: RepIndexController.name,
 			controllerAs: 'vm'
 		})
 		.state('repIndex.detail', {
 			url: "/representatives/detail/",
-			templateUrl: "representatives/controller/index/template.detail.html",
+			templateUrl: "representative/controller/index/template.detail.html",
 			controller: RepIndexController.name,
 			controllerAs: 'vm'
 		})
 		.state('repDetail', {
 			url: "/representatives/{id}/detail",
-			templateUrl: "/representatives/controller/detail/template.html",
+			templateUrl: "/representative/controller/detail/template.html",
 			controller: RepDetailController.name,
 			controllerAs: 'vm'
 		});

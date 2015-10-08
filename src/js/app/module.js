@@ -1,12 +1,23 @@
 import angular from 'angular';
 
-let moduleName = "jspm-systemjs-angular";
+import uiRouter from 'angular-ui-router';
 
-let appModule = angular.module(moduleName, [])
+import commonModule from './common/module';
+import repModule from './representative/module';
+
+let moduleName = "jsa";
+
+let appModule = angular.module(moduleName, [
+	
+	'ui.router',
+	
+	commonModule.name,
+	repModule.name])
 	
 	.config(config);
 	
 function config($locationProvider) {
+	"ngInject";
 	$locationProvider.html5Mode(true).hashPrefix('!');
 }
 

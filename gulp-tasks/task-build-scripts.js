@@ -33,7 +33,7 @@ gulp.task('build-scripts:bundle-app', [], function () {
 	return builder.bundle(
 		config.app.module.app, 
 		config.dir.public + config.file.bundle.app, 
-		config.bundleOptions)
+		config.setting.bundleOptions)
 		
 		.then(function () {
 			log(`Completed bundle ${config.file.bundle.app} in ${config.dir.public}`);
@@ -53,7 +53,7 @@ gulp.task('build-scripts:bundle-vendor', [], function () {
 		return builder.bundle(
 			config.app.module.vendor, 
 			config.dir.public + config.file.bundle.vendor, 
-			config.bundleOptions)
+			config.setting.bundleOptions)
 			
 			.then(function () {
 				log(`Completed bundle ${config.file.bundle.vendor} in ${config.dir.public}`);
@@ -74,7 +74,7 @@ gulp.task('build-scripts:bundle-template', ['build-scripts:template-cache'], fun
 		return builder.bundle(
 			config.app.module.template, 
 			config.dir.public + config.file.bundle.template, 
-			config.bundleOptions)
+			{ minify: true, sourceMaps: false })
 			
 			.then(function () {
 				log(`Completed bundle ${config.file.bundle.template} in ${config.dir.public}`);

@@ -9,12 +9,14 @@ System.config({
     ]
   },
   paths: {
+    "public/*": "public/*",
     "app/*": "src/js/app/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
+    "jsa:repService": "app/representative/service/module",
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.25",

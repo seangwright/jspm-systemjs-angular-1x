@@ -22,10 +22,10 @@ let build = {
 }
 
 let dir = {
-	public: 'public/',
-	src: 'src/',
-	app: 'src/js/app/',
-	jspm_packages: 'jspm_packages/'		
+	public: './public/',
+	src: './src/',
+	app: './src/js/app/',
+	jspm_packages: './jspm_packages/'		
 };
 
 let file = {

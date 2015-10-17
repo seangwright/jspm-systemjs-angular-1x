@@ -44,7 +44,7 @@ let file = {
 let setting = {
 	templateCache: {
 		module: 'jsa.templates',
-		moduleSystem: 'RequireJS',
+		moduleSystem: 'ES6',
 		standalone: true
 	},
 	minifyHtml: {

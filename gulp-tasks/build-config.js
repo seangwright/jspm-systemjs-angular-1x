@@ -7,21 +7,22 @@ let app = {
 	module: {
 		app: '[app/**/*.js]',
 		template: 'jsa:templates - angular',
-		vendor: 'app/jsa.module.js - [app/**/*.js] - jsa:templates - jsa:styles + angular',
-		style: 'jsa:styles'
+		vendor: 'app/jsa.module.js - [app/**/*.js] - jsa:templates - jsa:styles + angular + bootstrap',
+		style: 'jsa:styles - bootstrap'
+	},
+	envs: {
+		dev: 'dev',
+		prod: 'prod'
 	}
 };
 
 let build = {
-	envs: {
-		dev: 'dev',
-		prod: 'prod'
-	},
 	environment: argv.env || 'dev',
-	vendor: argv.vendor || false,
-	templates: argv.templates || false,
-	styles: argv.styles || false,
-}
+	app: argv.app || argv.dev || false,
+	vendor: argv.vendor || argv.dev || false,
+	templates: argv.templates || argv.dev || false,
+	styles: argv.styles || argv.dev || false,
+};
 
 let dir = {
 	public: './public/',

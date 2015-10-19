@@ -39,22 +39,24 @@ gulp.task('build-scripts:ng-annotate', ['build-scripts:bundle-app'], function ()
 });
 
 gulp.task('build-scripts:bundle-app', [], function () {
-	log(`Starting bundling of ${config.file.bundle.app} in ${config.dir.public}`);
-	let builder = new Builder('/', './config.js');
-	
-	return builder.bundle(
-		config.app.module.app, 
-		config.dir.public + config.file.bundle.app, 
-		config.setting.bundleOptions)
+	if (utils.bundleApp()) {
+		log(`Starting bundling of ${config.file.bundle.app} in ${config.dir.public}`);
+		let builder = new Builder('/', './config.js');
 		
-		.then(function () {
-			log(`Completed bundle ${config.file.bundle.app} in ${config.dir.public}`);
-			return;
-		})
-		
-		.catch(function (err) {
-			log(`Error : ${err}`);
-		});
+		return builder.bundle(
+			config.app.module.app, 
+			config.dir.public + config.file.bundle.app, 
+			config.setting.bundleOptions)
+			
+			.then(function () {
+				log(`Completed bundle ${config.file.bundle.app} in ${config.dir.public}`);
+				return;
+			})
+			
+			.catch(function (err) {
+				log(`Error : ${err}`);
+			});
+	}
 });
 
 gulp.task('build-scripts:bundle-vendor', ['build-scripts:templates'], function () {

@@ -1,8 +1,8 @@
 import angular from 'angular';
 
-import repManagerService from './repManager';
+import repManagerService from './rep.service.repManager.js';
 
-let moduleName = 'jsa.representative.service';
+let moduleName = 'jsa.rep.service';
 
 let repServiceModule = angular.module(moduleName, [])
 	

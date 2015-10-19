@@ -25,9 +25,9 @@ System.config({
     "clean-css": "npm:clean-css@3.4.6",
     "core-js": "npm:core-js@1.2.1",
     "css": "github:systemjs/plugin-css@0.1.18",
-    "jsa:repService": "app/representative/service/module",
+    "jsa:repService": "app/rep/service/rep.service.module.js",
     "jsa:styles": "styles/styles-adapter.js",
-    "jsa:templates": "public/templates",
+    "jsa:templates": "public/templates.js",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.7"
     },

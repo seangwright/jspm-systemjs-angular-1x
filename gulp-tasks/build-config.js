@@ -7,7 +7,7 @@ let app = {
 	module: {
 		app: '[app/**/*.js]',
 		template: 'jsa:templates - angular',
-		vendor: 'app/module - [app/**/*.js] - jsa:templates - jsa:styles + angular',
+		vendor: 'app/jsa.module.js - [app/**/*.js] - jsa:templates - jsa:styles + angular',
 		style: 'jsa:styles'
 	}
 };

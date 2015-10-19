@@ -2,10 +2,10 @@ import angular from 'angular';
 
 import repServiceModule from 'jsa:repService';
 
-import RepDetailController from './detail/controller';
-import RepIndexController from './index/controller';
+import RepDetailController from './rep.controller.detail.js';
+import RepIndexController from './rep.controller.index.js';
 
-let moduleName = 'jsa.representative.controller';
+let moduleName = 'jsa.rep.controller';
 
 let controllerModule = angular.module(moduleName, [
 
@@ -24,19 +24,19 @@ function config($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('repIndex', {
 			url: "/representatives",
-			templateUrl: "representative/controller/index/template.html",
+			templateUrl: "rep/controller/rep.controller.index.html",
 			controller: RepIndexController.name,
 			controllerAs: 'vm'
 		})
 		.state('repIndex.detail', {
 			url: "/representatives/detail/",
-			templateUrl: "representative/controller/index/template.detail.html",
+			templateUrl: "representative/controller/rep.controller.index.detail.html",
 			controller: RepIndexController.name,
 			controllerAs: 'vm'
 		})
 		.state('repDetail', {
 			url: "/representatives/{id}/detail",
-			templateUrl: "/representative/controller/detail/template.html",
+			templateUrl: "/representative/rep.controller.detail.html",
 			controller: RepDetailController.name,
 			controllerAs: 'vm'
 		});

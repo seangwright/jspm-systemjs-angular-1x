@@ -100,13 +100,15 @@ gulp.task('build-scripts:bundle-template', ['build-scripts:template-cache'], fun
 });
 
 gulp.task('build-scripts:template-cache', [], function () {
-	log(`Building template cache into angular module ${config.file.bundle.template} in ${config.dir.public}`);
-	
-	return gulp.src(config.dir.app + '**/*.html')
-	
-	.pipe($.plumber({ handleError: errorHandler }))
-	.pipe($.minifyHtml(config.setting.minifyHtml))
-	.pipe($.angularTemplatecache(config.file.bundle.template, config.setting.templateCache))
-	
-	.pipe(gulp.dest(config.dir.public));
+	if (utils.bundleTemplates()) {
+		log(`Building template cache into angular module ${config.file.bundle.template} in ${config.dir.public}`);
+		
+		return gulp.src(config.dir.app + '**/*.html')
+		
+		.pipe($.plumber({ handleError: errorHandler }))
+		.pipe($.minifyHtml(config.setting.minifyHtml))
+		.pipe($.angularTemplatecache(config.file.bundle.template, config.setting.templateCache))
+		
+		.pipe(gulp.dest(config.dir.public));
+	}
 });

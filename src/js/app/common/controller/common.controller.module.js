@@ -11,6 +11,6 @@ export default controllerModule;
 function config($stateProvider, $urlRouterProvider) {
 	"ngInject";
 	
-	// For any unmatched url, redirect to /representatives
-	$urlRouterProvider.otherwise("/representatives");
+	// For any unmatched url, redirect to /home
+	$urlRouterProvider.otherwise("/home");
 }

@@ -6,6 +6,7 @@ import commonModule from './common/module';
 import repModule from './representative/module';
 
 import templatesModule from "jsa:templates";
+import styles from "jsa:styles";
 
 let moduleName = "jsa";
 

@@ -7,7 +7,7 @@ let gulp 			= require('gulp'),
 	config 			= require('./build-config'),
 	log 			= require('./build-utils').log;
 
-gulp.task('watch', [], function () {
+gulp.task('build-watch', [], function () {
 	log(`Watching files in 'src/js/app/**/*.js', 'src/js/app/**/*.html, 'src/index.html' and 'jspm_packages/**/*.js'`);
 	
 	gulp.watch(config.dir.app + '**/*.js', ['build-scripts:app']);

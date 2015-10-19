@@ -11,7 +11,8 @@ module.exports = {
 	errorHandler:	errorHandler,
 	buildDev:		buildDev,
 	bundleVendor:	bundleVendor,
-	bundleTemplates:bundleTemplates
+	bundleTemplates:bundleTemplates,
+	bundleStyles:	bundleStyles,
 };
 
 function log(msg, error) {
@@ -50,4 +51,8 @@ function bundleVendor() {
 
 function bundleTemplates() {
 	return config.build.templates;
+}
+
+function bundleStyles() {
+	return config.build.styles;
 }

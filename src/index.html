@@ -6,6 +6,7 @@
 	<script src="/system.js"></script>
 	<script src="/config.js"></script>
 	<script src="/vendor.js"></script>
+	<script src="/styles.js"></script>
 	<script src="/templates.js"></script>
 	<script src="/jsa.js"></script>
 	
@@ -15,7 +16,12 @@
 	<base href="/" />
 </head>
 <body>
-	<h1>Demo App</h1>
-    <div ui-view></div>
+	<div class="container-narrow">
+		<div class="jumbotron">
+			<h1>Demo App</h1>
+		</div>
+		<p class="lead">This is a demo app exploring the capabilities of Angular 1.x, JSPM, SystemJs and ES2015</p>
+		<div ui-view></div>
+	</div>
 </body>
 </html>

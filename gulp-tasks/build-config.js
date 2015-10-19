@@ -7,7 +7,8 @@ let app = {
 	module: {
 		app: '[app/**/*.js]',
 		template: 'jsa:templates - angular',
-		vendor: 'app/module - [app/**/*.js] - jsa:templates + angular'
+		vendor: 'app/module - [app/**/*.js] - jsa:templates - jsa:styles + angular',
+		style: 'jsa:styles'
 	}
 };
 
@@ -18,14 +19,17 @@ let build = {
 	},
 	environment: argv.env || 'dev',
 	vendor: argv.vendor || false,
-	templates: argv.templates || false
+	templates: argv.templates || false,
+	styles: argv.styles || false,
 }
 
 let dir = {
-	public: 'public/',
-	src: 'src/',
-	app: 'src/js/app/',
-	jspm_packages: 'jspm_packages/'		
+	public: './public/',
+	src: './src/',
+	app: './src/js/app/',
+	styles: './src/js/styles/',
+	jspm_packages: './jspm_packages/',
+			
 };
 
 let file = {
@@ -33,12 +37,14 @@ let file = {
 		app: 'jsa.js',
 		vendor: 'vendor.js',
 		template: 'templates.js',
+		style: 'styles.js'
 	},
 	systemJs: {
 		systemJs: 'system.js',
 		config: 'config.js'
 	},
-	index: 'index.html'
+	index: 'index.html',
+	favicon: 'favicon.ico'
 };
 
 let setting = {
@@ -58,7 +64,7 @@ let setting = {
 	sourceMaps: { 
 		init: {
 			loadMaps: true,
-			debug: true
+			debug: false
 		},
 		write: {
 			includeContent: true,

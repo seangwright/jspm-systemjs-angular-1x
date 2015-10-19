@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import controllerModule from './controller/module';
+import controllerModule from './controller/common.controller.module.js';
 
 let moduleName = 'jsa.common';
 

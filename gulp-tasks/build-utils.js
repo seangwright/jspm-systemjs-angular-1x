@@ -13,6 +13,7 @@ module.exports = {
 	bundleVendor:	bundleVendor,
 	bundleTemplates:bundleTemplates,
 	bundleStyles:	bundleStyles,
+	bundleApp:		bundleApp
 };
 
 function log(msg, error) {
@@ -42,7 +43,11 @@ function errorHandler(error) {
 }
 
 function buildDev() {
-	return config.build.environment == config.build.envs.dev;
+	return config.build.environment == config.app.envs.dev;
+}
+
+function bundleApp() {
+	return config.build.app;
 }
 
 function bundleVendor() {

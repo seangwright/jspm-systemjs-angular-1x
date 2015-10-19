@@ -28,10 +28,22 @@
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
 <ol>
-<li>npm install</li>
-<li>jspm install</li>
-<li>gulp build [--dev] [--prod] [--vendor] [--templates]</li>
+<li><code>npm install</code></li>
+<li><code>jspm install</code></li>
+<li><code>gulp build --dev</code></li>
+<li><code>gulp build-watch</code></li>
 </ol>
+
+<p>Note: Each of the build switches (--) build a module in the application. For the initial build, <code>--dev</code> will build all required modules and copy all required files.</p>
+
+<h4>
+<a id="optional-post-build" class="anchor" href="#optional-post-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional post-build</h4>
+
+<ol>
+<li><code>gulp build [--app] [--vendor] [--templates] [--styles]</code></li>
+</ol>
+
+<p>You can also run <code>gulp build-watch</code> to watch the js, html, css and vendor module components in the app and re-bundle when they are modified.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/sgwatgit/jspm-systemjs-angular-1x">Jspm-systemjs-angular-1x</a> is maintained by <a href="https://github.com/sgwatgit">sgwatgit</a>.</span>

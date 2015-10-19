@@ -5,7 +5,6 @@ let gulp		= require('gulp'),
 	
 gulp.task('build', function(done) {
 	runSequence(
-		'build-clean',
 		['build-scripts', 'build-styles', 'build-files'],
 		done);
 });

@@ -3,14 +3,20 @@ A demo of using JSPM, SystemJS and Angular 1.4
 
 ### Installation
 1. `npm install`
-2. `jspm install`
-3. `gulp build --dev`
-4. `gulp build-watch`
+* `npm install jspm -g`
+* `jspm install`
+* `gulp build --dev`
 
-Note: Each of the build switches (--) build a module in the application. For the initial build, `--dev` will build all required modules and copy all required files.
+For the initial build, `--dev` will build all required modules and copy all required files.
+
+This build will end with a `build-watch` task that watches all app `*.html`, `*.js` and `*.css` files for changes and updates the bundled component files in the `/public` directory.
+
+It also watches `index.html`, `config.js` and any `*.js` files in `jspm_packages` (which are bundled as `vendor.js`). 
 
 #### Optional post-build
 
-1. `gulp build [--app] [--vendor] [--templates] [--styles]`
+`gulp build [--app] [--vendor] [--templates] [--styles]`
 
-You can also run `gulp build-watch` to watch the js, html, css and vendor module components in the app and re-bundle when they are modified.
+Each of the build switches (--) builds a module in the application.
+
+Only the modules specified by the switches will be watched when the build ends.

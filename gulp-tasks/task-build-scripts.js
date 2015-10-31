@@ -9,6 +9,10 @@ let gulp 			= require('gulp'),
 	errorHandler	= require('./build-utils').errorHandler,
 	config			= require('./build-config');
 	
+module.exports = {
+	scriptsAnnotate: scriptsAnnotate
+}
+	
 gulp.task('build-scripts', ['build-scripts:app', 'build-scripts:vendor'], function () {
 	log('Building scripts ...');
 });
@@ -26,6 +30,10 @@ gulp.task('build-scripts:templates', ['build-scripts:bundle-template'], function
 });
 
 gulp.task('build-scripts:ng-annotate', ['build-scripts:bundle-app'], function () {
+	scriptsAnnotate();
+});
+
+function scriptsAnnotate() {
 	log(`Angular-annotating ${config.file.bundle.app} in ${config.dir.public}`);
 	
 	return gulp.src(config.dir.public + config.file.bundle.app)
@@ -36,7 +44,7 @@ gulp.task('build-scripts:ng-annotate', ['build-scripts:bundle-app'], function ()
 	.pipe($.if(utils.buildDev(), $.sourcemaps.write(config.setting.sourceMaps.write)))
 	
 	.pipe(gulp.dest(config.dir.public));
-});
+}
 
 gulp.task('build-scripts:bundle-app', [], function () {
 	if (utils.bundleApp()) {

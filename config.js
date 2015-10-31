@@ -10,7 +10,7 @@ System.config({
   },
   paths: {
     "public/*": "public/*",
-    "styles/*": "src/js/styles/*",
+    "styles/*": "src/css/*",
     "app/*": "src/js/app/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
@@ -19,14 +19,14 @@ System.config({
   map: {
     "angular": "github:angular/bower-angular@1.4.7",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
-    "babel": "npm:babel-core@5.8.25",
-    "babel-runtime": "npm:babel-runtime@5.8.25",
+    "babel": "npm:babel-core@5.8.33",
+    "babel-runtime": "npm:babel-runtime@5.8.29",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "clean-css": "npm:clean-css@3.4.6",
-    "core-js": "npm:core-js@1.2.1",
-    "css": "github:systemjs/plugin-css@0.1.18",
+    "core-js": "npm:core-js@1.2.3",
+    "css": "github:systemjs/plugin-css@0.1.19",
     "jsa:repService": "app/rep/service/rep.service.module.js",
-    "jsa:styles": "styles/styles-adapter.js",
+    "jsa:styles-adapter": "src/js/styles/styles-adapter.js",
     "jsa:templates": "public/templates.js",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.7"
@@ -81,7 +81,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.8.25": {
+    "npm:babel-runtime@5.8.29": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:buffer@3.5.1": {
@@ -110,8 +110,9 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:core-js@1.2.1": {
+    "npm:core-js@1.2.3": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },

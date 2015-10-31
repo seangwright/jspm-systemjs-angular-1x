@@ -6,5 +6,6 @@ let gulp		= require('gulp'),
 gulp.task('build', function(done) {
 	runSequence(
 		['build-scripts', 'build-styles', 'build-files'],
+		'build-watch',
 		done);
 });

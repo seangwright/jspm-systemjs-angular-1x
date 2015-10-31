@@ -1,3 +1,3 @@
 import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
-import './jsa-styles.css!';
+import '../../css/jsa-styles.css!';

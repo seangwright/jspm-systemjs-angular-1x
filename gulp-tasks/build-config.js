@@ -7,8 +7,8 @@ let app = {
 	module: {
 		app: '[app/**/*.js]',
 		template: 'jsa:templates - angular',
-		vendor: 'app/jsa.module.js - [app/**/*.js] - jsa:templates - jsa:styles + angular + bootstrap',
-		style: 'jsa:styles - bootstrap'
+		vendor: 'app/jsa.module.js - [app/**/*.js] - jsa:templates - jsa:styles-adapter + angular + bootstrap',
+		style: 'jsa:styles-adapter - bootstrap'
 	},
 	envs: {
 		dev: 'dev',

@@ -7,7 +7,7 @@ import homeModule from './home/home.module.js';
 import repModule from './rep/rep.module.js';
 
 import templatesModule from "jsa:templates";
-import styles from "jsa:styles";
+import styles from "jsa:styles-adapter";
 
 let moduleName = "jsa";
 

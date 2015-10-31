@@ -4,7 +4,7 @@
   "description": "Project demoing the use of JSPM / SystemJS / Angular 1.4",
   "main": "src/app/js/app.js",
   "dependencies": {
-    "jspm": "^0.16.12"
+    "jspm": "^0.16.14"
   },
   "devDependencies": {
     "del": "^2.0.2",
@@ -18,13 +18,15 @@
     "gulp-plumber": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-task-listing": "^1.0.1",
-    "gulp-util": "^3.0.6",
+    "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
+    "jspm": "^0.16.14",
+    "jspm-dev-builder": "^0.3.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
-    "systemjs-builder": "^0.14.8",
-    "yargs": "^3.27.0"
+    "systemjs-builder": "^0.14.10",
+    "yargs": "^3.29.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

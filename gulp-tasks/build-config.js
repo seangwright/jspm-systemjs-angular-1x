@@ -28,7 +28,7 @@ let dir = {
 	public: './public/',
 	src: './src/',
 	app: './src/js/app/',
-	styles: './src/js/styles/',
+	styles: './src/css/',
 	jspm_packages: './jspm_packages/',
 			
 };
